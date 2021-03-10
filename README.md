@@ -79,8 +79,9 @@ To introduce new variables, they need to be declared inside the `responseFormat`
   }
 ```
 The name of the children inside `responseFormat` define the name used for the variable when invoked inside the response string. This variable can then contain multiple arguments that are still developed:
-* `extract_after_intend`: Splits the user message text from the word from an intend dictionary and keeps the latter part of the string. The name of used intend is required as an argument.
-* `extract_before_intend`: Splits the user message text from the word from an intend dictionary and keeps the former part of the string. The name of used intend is required as an argument.
+* `extract_after_intend`: Splits the user message text from the word from an intend dictionary and keeps the latter part of the string. The name of the used intend is required as an argument.
+* `extract_before_intend`: Splits the user message text from the word from an intend dictionary and keeps the former part of the string. The name of the used intend is required as an argument.
+* `extract_from_intend`: Extract the specific intend word from the user message text. The name of the used intend is required as an argument.
 * `extract_after_string`: Splits the user message text from a specified string and keeps the latter part of the string. The string sample is required as an argument.
 * `extract_before_string`: Splits the user message text from a specified string and keeps the former part of the string. The string sample is required as an argument.
 * `lower`: Lower every character from the current value of the variable. This is a boolean.
