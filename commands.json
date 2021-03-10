@@ -70,7 +70,12 @@
 		"request_animal": {
 			"intends": ["request", "bot", "animal"],
 			"responseType": "text",
-			"response": "Not a chance, $user.",
+			"responseFormat": {
+				"animal": {
+					"extract_intend": "animal"
+				}
+			},
+			"response": "Not a chance, $user. Your mother wouldn't want a %animal.",
 			"file": "https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=675.0&fit=crop"
 		},
 		"test": {
