@@ -1,0 +1,93 @@
+{
+	"intends": {
+		"self": [
+			"i am",
+			"i'm",
+			"im"
+		],
+		"ask": [
+			"tell",
+			"say",
+			"give",
+			"answer",
+			"buy"
+		],
+		"request": [
+			"want",
+			"request",
+			"need",
+			"desire",
+			"demand"
+		],
+		"sad": [
+			"sad",
+			"depressed",
+			"down",
+			"gloomy",
+			"bad",
+			"trash",
+			"heartbroken",
+			"sorry",
+			"distressed",
+			"distress",
+			"down"
+		],
+		"bot": [
+			"dad",
+			"bot",
+			"father",
+			"my lord",
+			"dada",
+			"daddy"
+		],
+		"comedy": [
+			"joke",
+			"funny"
+		],
+		"animal": [
+			"cat",
+			"dog",
+			"hamster",
+			"fish"
+		]
+	},
+	"uniques": {
+		"guess who's back": "Back again!"
+	},
+	"actions": {
+		"sad_response": {
+			"intends": ["self", "sad"],
+			"responseType": "list",
+			"responseFile": "cheer_up.txt",
+			"responseChoice": "random"
+		},
+		"dake_joke": {
+			"intends": ["ask", "comedy", "bot"],
+			"responseType": "list",
+			"responseFile": "jokes.txt",
+			"responseChoice": "random"
+		},
+		"request_animal": {
+			"intends": ["request", "bot", "animal"],
+			"responseType": "text",
+			"response": "Not a chance, $user."
+		},
+		"test": {
+			"intends": ["bot", "sad"],
+			"responseType": "text",
+			"response": "No $user, I am not sad...",
+			"file": "https://i0.wp.com/www.twobuttonsdeep.com/wp-content/uploads/2017/06/f6f360eff5b448dcf335573a4cfb4bce.jpg?resize=689%2C652"
+		},
+		"i_am_joke": {
+			"intends": ["self"],
+			"responseType": "text",
+			"responseFormat": {
+				"msg": {
+					"extract_after_intend": "self",
+					"upper": true
+				}
+			},
+			"response": "Hi %msg, I am dad!"
+		}
+	}
+}
