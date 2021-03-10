@@ -72,7 +72,7 @@
 			"responseType": "text",
 			"responseFormat": {
 				"animal": {
-					"extract_intend": "animal"
+					"extract_from_intend": "animal"
 				}
 			},
 			"response": "Not a chance, $user. Your mother wouldn't want a %animal.",
