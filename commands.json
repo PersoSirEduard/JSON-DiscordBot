@@ -107,8 +107,7 @@
 			"responseType": "text",
 			"responseFormat": {
 				"msg": {
-					"extract_after_intend": "self",
-					"upper": true
+					"extract_after_intend": "self"
 				}
 			},
 			"response": "Hi %msg, I am dad!"
