@@ -1,12 +1,37 @@
 # JSON-DiscordBot
 
 ## Description
-For now this repository contains a JSON file that controls a Discord bot using the official API for Python. By fetching the JSON file from this repository, it enables the bot the perform different actions when the user mentions specific key words that have an intend from a dictionnary.
+Use a JSON file to control a Discord bot using the official API for Python. At its most basic functionality, by fetching the JSON file, it enables the bot the perform different actions when the user mentions specific key words that have an intend from a predefined dictionnary.
 #### Features
 * Respond to specific discord messages using a dictionnary of intends
 * Live modification of bot actions without the need to restart the app
 * Respond using lists (i.e. quotes, jokes, etc), texts, and files
 * Very basic message formatting directly within the JSON file
+
+#### Todo
+* Add the 'embed' response type
+* Add more formatting settings
+* Add the command action (i.e. Call the bot by using !example commands)
+
+## Installation
+**Python 3.8 and above** is required for the application to work.
+### Repository clonning
+Clone the following repository:
+```bash
+$ git clone https://github.com/PersoSirEduard/JSON-DiscordBot.git
+
+$ cd JSON-DiscordBot
+```
+Then, install the required Python libraries:
+```bash
+$ python -m pip install -r requirements.txt
+```
+
+### Configure the Discord bot
+For the script to work, it requires an unique Discord token from their [Developer Portal](https://discord.com/developers/docs/intro) and a path/url to the `commands.json` file. Once acquired, the bot can be activated with:
+```bash
+$ python main.py INSERT_DISCORD_TOKEN INSERT_COMMANDS_JSON_PATH
+```
 
 ## Modification of the `commands.json` file
 This next section will summarize the commands and modifications available for the bot right now.
