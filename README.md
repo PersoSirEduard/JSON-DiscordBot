@@ -1,7 +1,5 @@
 # JSON-DiscordBot
 
-#### *Files of the bot will be available when I clean up the code and solve all the error handling.
-
 ## Description
 For now this repository contains a JSON file that controls a Discord bot using the official API for Python. By fetching the JSON file from this repository, it enables the bot the perform different actions when the user mentions specific key words that have an intend from a dictionnary.
 #### Features
@@ -55,7 +53,7 @@ Next, for the action to execute, it will need to have an array `intends` with th
 ```
 Another mandatory property is the `responseType` which indicates to the bot what type of response to use. For now, 2 different responses are available:
 * `text`: Send text (formatted or not) with images and files
-* `list`: Query a response line from a list contained within a .txt file (lists are locked for now)
+* `list`: Query a response line from a list contained within a .txt file
 
 *Note: The order of the actions is important. Top of the list actions are first prioritized.*
 
@@ -94,4 +92,4 @@ The `text` response can also use the `file` property to send an image or a file 
 Finally, the final response can be formatted inside the `response` property.
 
 #### `list` response
-For now, the `list` response is limited to two lists, but the method will eventually support external lists from urls. This response type requires a `responseFile` with the name of the file containing the list. Also, this response type uses `responseChoice` to select the item from the list to be sent to the user. By default, this property has a value of `random`, but an index integer can specified for a specific line from the list.
+The `list` response supports text files locally and online. This response type requires a `responseFile` with the name of the file containing the list. Also, this response type uses `responseChoice` to select the item from the list to be sent to the user. By default, this property has a value of `random`, but an index integer can specified for a specific line from the list.
