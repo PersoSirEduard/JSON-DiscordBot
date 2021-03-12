@@ -5,9 +5,10 @@ import urllib.request
 from urllib.parse import urlparse
 import io
 import os
+import sys
 
-DISCORD_TOKEN = "insert discord token here"
-COMMANDS_JSON = "https://raw.githubusercontent.com/PersoSirEduard/JSON-DiscordBot/main/commands.json"
+DISCORD_TOKEN = str(sys.argv[1])
+COMMANDS_JSON = str(sys.argv[2]) or "https://raw.githubusercontent.com/PersoSirEduard/JSON-DiscordBot/main/commands.json"
 
 client = discord.Client()
 
