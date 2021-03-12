@@ -1,0 +1,116 @@
+{
+	"intends": {
+		"self": [
+			"i am",
+			"i'm",
+			"im"
+		],
+		"ask": [
+			"tell",
+			"say",
+			"give",
+			"answer",
+			"buy"
+		],
+		"request": [
+			"want",
+			"request",
+			"need",
+			"desire",
+			"demand"
+		],
+		"sad": [
+			"sad",
+			"depressed",
+			"down",
+			"gloomy",
+			"bad",
+			"trash",
+			"heartbroken",
+			"sorry",
+			"distressed",
+			"distress",
+			"down"
+		],
+		"bot": [
+			"dad",
+			"bot",
+			"father",
+			"my lord",
+			"dada",
+			"daddy"
+		],
+		"comedy": [
+			"joke",
+			"funny"
+		],
+		"animal": [
+			"cat",
+			"dog",
+			"hamster",
+			"fish"
+		],
+		"insult": [
+			"stupid",
+			"annoying",
+			"idiot",
+			"bastard",
+			"bad",
+			"useless"
+		]
+	},
+	"uniques": {
+		"guess who's back": "Back again!"
+	},
+	"actions": {
+		"sad_response": {
+			"intends": ["self", "sad"],
+			"responseType": "list",
+			"responseFile": "cheer_up.txt",
+			"responseChoice": "random"
+		},
+		"dake_joke": {
+			"intends": ["ask", "comedy", "bot"],
+			"responseType": "list",
+			"responseFile": "jokes.txt",
+			"responseChoice": "random"
+		},
+		"request_animal": {
+			"intends": ["request", "bot", "animal"],
+			"responseType": "text",
+			"responseFormat": {
+				"animal": {
+					"extract_from_intend": "animal"
+				}
+			},
+			"response": "Not a chance, $user. Your mother wouldn't want a %animal.",
+			"file": "https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=675.0&fit=crop"
+		},
+		"test": {
+			"intends": ["bot", "sad"],
+			"responseType": "text",
+			"response": "No $user, I am not sad...",
+			"file": "https://i0.wp.com/www.twobuttonsdeep.com/wp-content/uploads/2017/06/f6f360eff5b448dcf335573a4cfb4bce.jpg?resize=689%2C652"
+		},
+		"insulted": {
+			"intends": ["bot", "insult"],
+			"responseType": "text",
+			"responseFormat": {
+				"insult": {
+					"extract_from_intend": "insult"
+				}
+			},
+			"response": "No u! or was it UwU? I don't know... but you are %insult for saying this to your father."
+		},
+		"i_am_joke": {
+			"intends": ["self"],
+			"responseType": "text",
+			"responseFormat": {
+				"msg": {
+					"extract_after_intend": "self"
+				}
+			},
+			"response": "Hi %msg, I am dad!"
+		}
+	}
+}
