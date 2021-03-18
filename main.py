@@ -156,7 +156,7 @@ def getFile(path, aJsonFile=False): # Gets file locally or online
 	else: # Read local file
 		try:
 			fileRequest = open(path, "r")
-			fileContents = fileRequest.read()
+			fileContents = fileRequest.read().decode('utf-8')
 			fileRequest.close()
 		except Exception as e:
 			print("Could not access the local file at '{0}'. {1}".format(path, e))
