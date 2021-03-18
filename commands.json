@@ -71,7 +71,8 @@
 		"amazon": [ "amazon", "package" ]
 	},
 	"uniques": {
-		"guess who's back": "Back again!"
+		"guess who's back": "Back again!",
+		"u gay": "no u"
 	},
 	"actions": {
 		"sad_response": {
