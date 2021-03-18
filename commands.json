@@ -114,7 +114,7 @@
 			"response": "No u! or was it UwU? I don't know... but you are %insult for saying this to your father."
 		},
 		"amazon_product": {
-			"intends": ["amazon"],
+			"intends": ["amazon", "bot", "request", "weird"],
 			"responseType": "list",
 			"responseChoice": "random",
 			"responseFile": "https://raw.githubusercontent.com/PersoSirEduard/JSON-DiscordBot/main/examples/dadbot/amazon_weird_products.txt"
