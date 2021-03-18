@@ -115,7 +115,7 @@
 			"intends": ["amazon"],
 			"responseType": "list",
 			"responseChoice": "random",
-			"responseFile": "https://raw.githubusercontent.com/PersoSirEduard/JSON-DiscordBot/main/examples/dadbot/amazon_weird_products.txt"
+			"responseFile": "cheer_up.txt"
 		},
 		"i_am_joke": {
 			"intends": ["self"],
