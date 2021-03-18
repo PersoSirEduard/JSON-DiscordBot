@@ -57,7 +57,16 @@
 			"bastard",
 			"bad",
 			"useless"
-		]
+		],
+		"weird": [
+			"weird",
+			"strange",
+			"uncommon",
+			"wtf",
+			"interesting",
+			"ridiculous"
+		],
+		"amazon": [ "amazon" ]
 	},
 	"uniques": {
 		"guess who's back": "Back again!"
@@ -101,6 +110,12 @@
 				}
 			},
 			"response": "No u! or was it UwU? I don't know... but you are %insult for saying this to your father."
+		},
+		"amazon_product": {
+			"intends": ["bot", "request", "weird", "amazon"],
+			"responseType": "list",
+			"responseChoice": "random",
+			"responseFile": "https://raw.githubusercontent.com/PersoSirEduard/JSON-DiscordBot/main/examples/dadbot/amazon_weird_products.txt"
 		},
 		"i_am_joke": {
 			"intends": ["self"],
