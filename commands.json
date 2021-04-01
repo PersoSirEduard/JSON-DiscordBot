@@ -68,7 +68,11 @@
 			"interesting",
 			"ridiculous"
 		],
-		"amazon": [ "amazon", "package" ]
+		"amazon": [ "amazon", "package" ],
+		"thanks": [
+			"thanks",
+			"thnx"
+		]
 	},
 	"uniques": {
 		"guess who's back": "Back again!",
@@ -119,6 +123,11 @@
 			"responseType": "list",
 			"responseChoice": "random",
 			"responseFile": "https://raw.githubusercontent.com/PersoSirEduard/JSON-DiscordBot/main/examples/dadbot/amazon_weird_products.txt"
+		},
+		"thanks": {
+			"intends": ["thanks", "bot"],
+			"responseType": "text",
+			"response": "My pleasure, $user. Dad loves you."
 		},
 		"i_am_joke": {
 			"intends": ["self"],
