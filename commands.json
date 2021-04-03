@@ -72,6 +72,10 @@
 		"thanks": [
 			"thanks",
 			"thnx"
+		],
+		"roses": [
+			"roses are red violets are blue",
+			"roses are red, violets are blue"
 		]
 	},
 	"uniques": {
@@ -128,6 +132,12 @@
 			"intends": ["thanks", "bot"],
 			"responseType": "text",
 			"response": "My pleasure, $user. Dad loves you."
+		},
+		"roses_violets_joke": {
+			"intends": ["roses"],
+			"responseType": "list",
+			"responseChoice": "random",
+			"responseFile": "https://raw.githubusercontent.com/PersoSirEduard/JSON-DiscordBot/main/examples/dadbot/violets_are_violet.txt"
 		},
 		"i_am_joke": {
 			"intends": ["self"],
