@@ -56,7 +56,17 @@
 			"family selfie",
 			"family photoraph"
 		],
-		"pepsi": ["pepsi"]
+		"pepsi": ["pepsi"],
+		"insult": [
+			"stupid",
+			"ugly",
+			"retarded",
+			"fat",
+			"horrible",
+			"bitch",
+			"dog",
+			"pussy"
+		]
 	},
 	"uniques": {
 		"guess who's back": "Back again!"
@@ -82,7 +92,10 @@
 					"extract_from_intend": "animal"
 				}
 			},
-			"response": "Not a chance, $user. You know very well what your mother would say if I buy you a %animal"
+			"response": "Not a chance, $user. You know very well what your mother would do to me if I buy you a %animal."
+		},
+		"roses_are_red": {
+			
 		},
 		"sad_dad": {
 			"intends": ["bot", "sad"],
@@ -107,6 +120,16 @@
 			"file": "https://github.com/PersoSirEduard/JSON-DiscordBot/raw/main/examples/dadbot/pepsi.png",
 			"response": ""
 		},
+		"insulted": {
+			"intends": ["bot", "insult"],
+			"responseType": "text",
+			"responseFormat": {
+				"insult": {
+					"extract_after_intend": "insult"
+				}
+			},
+			"response": "No u. If I am %insult then you are a worse %insult."
+		}
 		"i_am_joke": {
 			"intends": ["self"],
 			"responseType": "text",
