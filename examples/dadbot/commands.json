@@ -94,6 +94,12 @@
 			},
 			"response": "%output"
 		},
+		"pepsi": {
+			"intends": ["pepsi"],
+			"responseType": "text",
+			"file": "https://github.com/PersoSirEduard/JSON-DiscordBot/raw/main/examples/dadbot/pepsi.png",
+			"response": ""
+		},
 		"i_am_joke": {
 			"intends": ["self"],
 			"responseType": "text",
