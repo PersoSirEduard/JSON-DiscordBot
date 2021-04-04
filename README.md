@@ -28,9 +28,9 @@ $ python -m pip install -r requirements.txt
 ```
 
 ### Configure the Discord bot
-For the script to work, it requires an unique Discord token from their [Developer Portal](https://discord.com/developers/docs/intro) and a path/url to the `commands.json` file. Once acquired, the bot can be activated with:
+For the script to work, it requires an unique Discord token from their [Developer Portal](https://discord.com/developers/docs/intro) and a path/url to the `commands.json` file. These values can then be updated at the beginning of the `main.py` file. Once configured, the bot can be activated with:
 ```bash
-$ python main.py INSERT_DISCORD_TOKEN INSERT_COMMANDS_JSON_PATH
+$ python main.py
 ```
 
 ## Modification of the `commands.json` file
