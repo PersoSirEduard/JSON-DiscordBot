@@ -77,7 +77,12 @@
 		"request_animal": {
 			"intends": ["request", "bot", "animal"],
 			"responseType": "text",
-			"response": "Not a chance, $user."
+			"responseFormat": {
+				"animal": {
+					"extract_from_intend": "animal"
+				}
+			},
+			"response": "Not a chance, $user. You know very well what your mother would say if I buy you a %animal"
 		},
 		"sad_dad": {
 			"intends": ["bot", "sad"],
