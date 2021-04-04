@@ -109,6 +109,20 @@ The name of the children inside `responseFormat` define the name used for the va
 * `extract_before_string`: Splits the user message text from a specified string and keeps the former part of the string. The string sample is required as an argument.
 * `lower`: Lower every character from the current value of the variable. This is a boolean.
 * `upper`: Capitalizes every character from the current vlaue of the variable. This is a boolean.
+* `exec`: Execute additional Python code directly from within the input string or refer to a local file with Python code. Values 'file' (by default False) for a Discord file and 'value' (by default "") can be modified for the bot to send a text message with a file.
+For example,
+```json
+"exec_python": {
+  "intends": ["exec_example"],
+  "responseType": "text",
+  "responseFormat": {
+    "output": {
+      "exec": "value = 'Hello world! ' + str(random.randint(0, 100))"
+    }
+  },
+  "response": "Exec output: %output"
+}
+```
 
 *Note: The order of the variable's properties is important (order is from top to bottom).*
 
