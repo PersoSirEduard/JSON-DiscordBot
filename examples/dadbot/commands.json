@@ -55,7 +55,8 @@
 			"family picture",
 			"family selfie",
 			"family photoraph"
-		]
+		],
+		"pepsi": ["pepsi"]
 	},
 	"uniques": {
 		"guess who's back": "Back again!"
@@ -97,6 +98,7 @@
 		"pepsi": {
 			"intends": ["pepsi"],
 			"responseType": "text",
+			"responseRate": 0.2,
 			"file": "https://github.com/PersoSirEduard/JSON-DiscordBot/raw/main/examples/dadbot/pepsi.png",
 			"response": ""
 		},
