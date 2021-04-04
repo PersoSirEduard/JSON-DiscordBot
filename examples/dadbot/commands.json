@@ -115,7 +115,7 @@
 			"responseType": "text",
 			"responseRate": 0.2,
 			"file": "https://github.com/PersoSirEduard/JSON-DiscordBot/raw/main/examples/dadbot/pepsi.png",
-			"response": "Somebody said Pepsi?"
+			"response": "Someone said Pepsi?"
 		},
 		"insulted": {
 			"intends": ["bot", "insult"],
