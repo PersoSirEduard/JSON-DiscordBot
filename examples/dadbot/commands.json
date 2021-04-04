@@ -94,9 +94,6 @@
 			},
 			"response": "Not a chance, $user. You know very well what your mother would do to me if I buy you a %animal."
 		},
-		"roses_are_red": {
-			
-		},
 		"sad_dad": {
 			"intends": ["bot", "sad"],
 			"responseType": "text",
