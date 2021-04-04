@@ -129,7 +129,7 @@
 				}
 			},
 			"response": "No u. If I am %insult then you are a worse %insult."
-		}
+		},
 		"i_am_joke": {
 			"intends": ["self"],
 			"responseType": "text",
