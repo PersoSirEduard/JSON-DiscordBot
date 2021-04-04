@@ -78,11 +78,11 @@
 			"responseType": "text",
 			"response": "Not a chance, $user."
 		},
-		"test": {
+		"sad_dad": {
 			"intends": ["bot", "sad"],
 			"responseType": "text",
 			"response": "No $user, I am not sad...",
-			"file": "https://i0.wp.com/www.twobuttonsdeep.com/wp-content/uploads/2017/06/f6f360eff5b448dcf335573a4cfb4bce.jpg?resize=689%2C652"
+			"file": "https://github.com/PersoSirEduard/JSON-DiscordBot/raw/main/examples/dadbot/sad_dad_bbq.png"
 		},
 		"family_portrait": {
 			"intends": ["family_portrait", "request", "bot"],
