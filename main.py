@@ -7,15 +7,16 @@ import io
 import os
 import sys
 
-DISCORD_TOKEN = str(sys.argv[1])
-COMMANDS_JSON = str(sys.argv[2]) or "https://raw.githubusercontent.com/PersoSirEduard/JSON-DiscordBot/main/commands.json"
+DISCORD_TOKEN = "discord token"
+COMMANDS_JSON = "path to commands.json file"
 
 client = discord.Client()
 
 @client.event
 async def on_ready():
 	print(client.user,"has connected to Discord!")
-	
+	global DISCORD_TOKEN
+	DISCORD_TOKEN = "" # Erase the discord token
 
 @client.event
 async def on_message(message):
@@ -47,10 +48,28 @@ async def on_message(message):
 async def action_text(action, commands, msg, message):
 	#Expect 'response' 
 	text = action.get("response", False) # Raw text to send
-	if text:
+	responseRate = action.get("responseRate", 1) # Response rate to message command (between 0 to 1)
+	if text and random.random() <= responseRate:
+		file = False
 		for var in action.get("responseFormat", []): #Formatting 
 			value = ""
 			for f in action["responseFormat"][var]:
+				if f == "pipe":
+					command = action["responseFormat"][var][f]
+					args = command.get("args", [])
+					proc = subprocess.Popen(procArgs, stdout=subprocess.PIPE)
+					output = proc.communicate()[0]
+					value = output.decode('utf-8')
+				if f == "exec":
+					code = action["responseFormat"][var][f]
+					codeString = getFile(code)
+					if codeString == "":
+						codeString = code
+					_locals = locals()
+					exec(codeString, globals(), _locals)
+					value = _locals["value"]
+					file = _locals["file"]
+					
 				if f == "extract_after_intend":
 					intend = action["responseFormat"][var][f]
 					arr = msg.split(" ")
@@ -85,23 +104,23 @@ async def action_text(action, commands, msg, message):
 			text = text.replace("%" + var, value)
 							
 		text = text.replace("$user", message.author.mention)
-					
-		if action.get("file", False):
+
+		if action.get("file", False) or file:
 			try:
-				req = urllib.request.Request(action.get("file", ""))
-				r = urllib.request.urlopen(req)
-				a = urlparse(action.get("file", ""))
-				f = io.BytesIO(r.read())
-				file = discord.File(fp=f, filename=os.path.basename(a.path))
-				r.close()
-				await message.channel.send(text, file=file)
-			except Exception:
-				print("Could not send file.")
+				if not file:
+					file = getDiscordFile(action.get("file", ""))
+				if text == "":
+					await message.channel.send(file=file)
+				else:
+					await message.channel.send(text, file=file)
+			except Exception as e:
+				print("Could not send file.", e)
 		else:
-			await message.channel.send(text)	
+			if text != "":
+				await message.channel.send(text)	
 	else:
 		print("Could not find a response string.")
-	
+		
 async def action_list(action, commands, msg, message):
 	# Expect 'responseFile' and 'responseChoice'
 	file = action.get("responseFile", False)
@@ -115,6 +134,20 @@ async def action_list(action, commands, msg, message):
 			await message.channel.send(line) # Send msg
 	else:
 		print("Could not find a valid response file.") # No list file mentionned
+		
+def getDiscordFile(path):
+	fileRequest = isValidUrl(path)
+	if fileRequest:
+		req = urllib.request.Request(path)
+		r = urllib.request.urlopen(req)
+		a = urlparse(path)
+		f = io.BytesIO(r.read())
+		file = discord.File(fp=f, filename=os.path.basename(a.path))
+		r.close()
+		return file
+	else:
+		file = discord.File(path)
+		return file
 	
 def getLine(file, index):
 	contents = getFile(file) # Get file contents
@@ -132,7 +165,7 @@ def getLine(file, index):
 def getRandomLine(file):
 	contents = getFile(file) # Get file contents
 	lines = contents.splitlines() # Split string into individual lines
-	rdmIndex = random.randint(0, len(lines) - 1) # Select random line index
+	rdmIndex = random.randint(0, len(lines)) # Select random line index
 	return lines[rdmIndex] # Return random line
 	
 def hasIntends(intends, commands, text):
@@ -151,12 +184,12 @@ def getFile(path, aJsonFile=False): # Gets file locally or online
 	fileRequest = isValidUrl(path)
 	fileContents = ""
 	if fileRequest: # Read online file
-		fileContents = fileRequest.read()
+		fileContents = fileRequest.read().decode('utf-8')
 		fileRequest.close()
 	else: # Read local file
 		try:
 			fileRequest = open(path, "r")
-			fileContents = fileRequest.read().decode('utf-8')
+			fileContents = fileRequest.read()
 			fileRequest.close()
 		except Exception as e:
 			print("Could not access the local file at '{0}'. {1}".format(path, e))
@@ -166,7 +199,7 @@ def getFile(path, aJsonFile=False): # Gets file locally or online
 			jsonParsed = json.loads(fileContents)
 			return jsonParsed
 		except Exception as e:
-			print("Could parse the JSON file. ", e)
+			print("Could not parse the JSON file. ", e)
 			return {}
 	else:
 		return fileContents
