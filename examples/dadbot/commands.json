@@ -57,6 +57,12 @@
 			"family photoraph"
 		],
 		"pepsi": ["pepsi"],
+		"greetings": [
+			"hi",
+			"hello",
+			"greetings",
+			"hey"
+		],
 		"insult": [
 			"stupid",
 			"ugly",
@@ -66,12 +72,6 @@
 			"bitch",
 			"dog",
 			"pussy"
-		],
-		"greetings": [
-			"hi",
-			"hello",
-			"greetings",
-			"hey"
 		]
 	},
 	"uniques": {
