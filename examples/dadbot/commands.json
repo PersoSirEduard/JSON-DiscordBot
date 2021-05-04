@@ -66,10 +66,16 @@
 			"bitch",
 			"dog",
 			"pussy"
-		]
+		],
+		"greetings": [
+			"hi",
+			"hello",
+			"greetings",
+			"hey"
 	},
 	"uniques": {
-		"guess who's back": "Back again!"
+		"guess who's back": "Back again!",
+		"identify yourself": "Dad Bod v1.04 By Eduard A."
 	},
 	"actions": {
 		"sad_response": {
@@ -84,6 +90,7 @@
 			"responseFile": "jokes.txt",
 			"responseChoice": "random"
 		},
+		"
 		"request_animal": {
 			"intends": ["request", "bot", "animal"],
 			"responseType": "text",
@@ -137,6 +144,11 @@
 				}
 			},
 			"response": "Hi %msg, I am dad!"
+		},
+		"hi_dad": {
+			"intends": ["bot", "greetings"],
+			"responseType": "text",
+			"response": "Hey, $user!"
 		}
 	}
 }
