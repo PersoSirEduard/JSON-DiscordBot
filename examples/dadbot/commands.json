@@ -91,7 +91,6 @@
 			"responseFile": "jokes.txt",
 			"responseChoice": "random"
 		},
-		"
 		"request_animal": {
 			"intends": ["request", "bot", "animal"],
 			"responseType": "text",
