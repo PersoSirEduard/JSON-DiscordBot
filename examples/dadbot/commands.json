@@ -75,8 +75,7 @@
 		]
 	},
 	"uniques": {
-		"guess who's back": "Back again!",
-		"identify yourself": "Dad Bod v1.04 By Eduard A."
+		"dad_bot_version": "Dad Bod v1.04 By Eduard A."
 	},
 	"actions": {
 		"sad_response": {
