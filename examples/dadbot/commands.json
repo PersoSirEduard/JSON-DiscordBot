@@ -63,6 +63,9 @@
 			"greetings",
 			"hey"
 		],
+		"roses": [
+			"roses are red violets are blue"
+		],
 		"insult": [
 			"stupid",
 			"ugly",
@@ -143,6 +146,12 @@
 				}
 			},
 			"response": "Hi %msg, I am dad!"
+		},
+		"roses_and_violets": {
+			"intends": ["roses"],
+			"responseType": "list",
+			"responseFile": "https://raw.githubusercontent.com/PersoSirEduard/JSON-DiscordBot/main/examples/dadbot/violets_are_violet.txt",
+			"responseChoice": "random"
 		},
 		"hi_dad": {
 			"intends": ["bot", "greetings"],
